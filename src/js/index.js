@@ -38,8 +38,13 @@ const init = () => {
     return Math.floor(Math.random() * (len - 1)) + 1;
   };
 
+  // helper function that returns a random index from max len
+  const getRandomIndex = len => {
+    return Math.floor(Math.random() * len);
+  };
+
   const generatePassword = (passwordLen, fields) => {
-    let password = "";
+    let password = [];
     let fieldsLen = fields.length;
 
     switch (fieldsLen) {
@@ -48,14 +53,32 @@ const init = () => {
         break;
       case 1:
         let str = params.filter(param => param.name === fields[0])[0].value;
+
         for (let i = 0; i < passwordLen; i++) {
-          password += getRandomValue(str);
+          password.push(getRandomValue(str));
         }
         break;
       case 2:
+        let remainder = passwordLen;
+        fields.forEach((field, i, arr) => {
+          let str = params.filter(param => param.name === field)[0].value;
+          let len;
+          if (i === arr.length - 1) { // last
+            len = remainder;
+          } else {
+            len = getRandomNumber(remainder);
+            remainder = passwordLen - len;
+          }
+
+          for (let i = 0; i < len; i++) {
+            password.push(getRandomValue(str));
+          }
+        })
+      case 3:
+      case 4:
     }
 
-    console.log(password, password.length);
+    console.log(password.join(""), password.length);
   };
 
   // submits password form and calls generatePassword with given value fields
