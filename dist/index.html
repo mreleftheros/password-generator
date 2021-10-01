@@ -4,13 +4,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boilerplate</title>
+  <title>Password Generator</title>
   <link rel="shortcut icon" href="#" type="image/x-icon">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   
-  
+  <main class="main">
+    <div class="main__container">
+      <!-- output-container -->
+      <div class="main__container__output-container">
+        <textarea class="main__container__output-container__output" spellcheck="false" value="" disabled></textarea>
+        <button type="button" class="main__container__output-container__copy-btn">Copy</button>
+      </div>
+
+      <!-- password-form -->
+      <form class="main__container__password-form">
+        <p class="main__container__password-form__title">Password Parameters</p>
+        <div class="main__container__password-form__form-control">
+          <label class="main__container__password-form__form-control__label" for="upperCaseLetters">Contain uppercase letters</label>
+          <input class="main__container__password-form__form-control__checkbox" type="checkbox" name="upperCaseLetters" id="upperCaseLetters">
+        </div>
+        <div class="main__container__password-form__form-control">
+          <label class="main__container__password-form__form-control__label" for="lowerCaseLetters">Contain lowercase letters</label>
+          <input class="main__container__password-form__form-control__checkbox" type="checkbox" name="lowerCaseLetters" id="lowerCaseLetters">
+        </div>
+        <div class="main__container__password-form__form-control">
+          <label class="main__container__password-form__form-control__label" for="numbers">Contain numbers</label>
+          <input class="main__container__password-form__form-control__checkbox" type="checkbox" name="numbers" id="numbers">
+        </div>
+        <div class="main__container__password-form__form-control">
+          <label class="main__container__password-form__form-control__label" for="symbols">Contain symbols</label>
+          <input class="main__container__password-form__form-control__checkbox" type="checkbox" name="symbols" id="symbols">
+        </div>
+        <button class="main__container__password-form__submit-btn" type="submit">Generate</button>
+      </form>
+    </div>
+  </main>
 
   <script src="./assets/bundle.js"></script>
 </body>

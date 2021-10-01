@@ -1,2 +1,142 @@
 @import "defaults";
 @import "mixins";
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(hsl(313, 100%, 20%), hsl(313, 100%, 70%));
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 40rem;
+    background: rgba(0, 0, 0, .5);
+    height: 40rem;
+    border-radius: 1rem;
+
+    // output-container
+    &__output-container {
+      flex-basis: 5rem;
+      display: flex;
+      align-items: center;
+      // background: red;
+      width: 100%;
+      padding: 1rem;
+
+      &__output {
+        flex: 1;
+        display: block;
+        font-size: 1.5rem;
+        resize: none;
+        appearance: none;
+        border: none;
+        outline: none;
+        height: 3rem;
+        line-height: 3rem;
+        padding: 0 .5rem;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      &__copy-btn {
+        flex-basis: 5rem;
+        margin-left: 1rem;
+        border: none;
+        font-size: 1.5rem;
+        padding: .5rem 2.5rem;
+        border-radius: 1.5rem;
+        background: blue;
+        color: #fff;
+        text-shadow: 1px 1px 3px #000;
+        cursor: pointer;
+      }
+    }
+
+    // password-form
+    &__password-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__title {
+        flex-basis: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: .1rem;
+        color: #fff;
+      }
+
+      &__form-control {
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem;
+        margin: 1rem 0;
+        width: 80%;
+
+        &__label {
+          display: block;
+          font-size: 2rem;
+          color: #fff;
+        }
+
+        &__checkbox {
+          position: relative;
+          appearance: none;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 1rem;
+          background: #fff;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            background: crimson;
+            border-radius: .5rem;
+            transition: opacity .1s ease-out;
+          }
+
+          &:checked::before {
+            opacity: 1;
+          }
+        }
+      }
+
+      &__submit-btn {
+        display: block;
+        margin-top: auto;
+        margin-bottom: 1.5rem;
+        border: none;
+        background: blue;
+        padding: .5rem 2.5rem;
+        border-radius: 1.5rem;
+        color: #fff;
+        text-shadow: 1px 1px 3px #000;
+        font-size: 2rem;
+        cursor: pointer;
+        transform: scale(0.95);
+        transition: transform .3s ease-out;
+
+        &:hover {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
