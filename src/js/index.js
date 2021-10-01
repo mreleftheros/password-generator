@@ -43,6 +43,18 @@ const init = () => {
     return Math.floor(Math.random() * len);
   };
 
+  // takes an item and an array and puts the item in random index inside array
+  const setItemIntoRandomIndex = (item, arr) => {
+    let len = arr.length;
+    let randomindex = getRandomIndex(len);
+
+    while (arr[randomindex]) {
+      randomindex = getRandomIndex(len);
+    }
+
+    arr.splice(randomindex, 0, item);
+  };
+
   const generatePassword = (passwordLen, fields) => {
     let password = [];
     let fieldsLen = fields.length;
