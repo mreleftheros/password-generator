@@ -33,6 +33,11 @@ const init = () => {
     return str[Math.floor(Math.random() * str.length)];
   };
 
+  // helper function that returns random number starting from 1 and max of len
+  const getRandomNumber = len => {
+    return Math.floor(Math.random() * (len - 1)) + 1;
+  };
+
   const generatePassword = (passwordLen, fields) => {
     let password = "";
     let fieldsLen = fields.length;
@@ -46,6 +51,8 @@ const init = () => {
         for (let i = 0; i < passwordLen; i++) {
           password += getRandomValue(str);
         }
+        break;
+      case 2:
     }
 
     console.log(password, password.length);
