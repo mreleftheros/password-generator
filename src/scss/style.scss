@@ -38,7 +38,12 @@
         line-height: 3rem;
         padding: 0 .5rem;
         text-align: center;
-        cursor: pointer;
+      }
+
+      &__copy-btn.active {
+        cursor: auto;
+        color: crimson;
+        text-shadow: none;
       }
 
       &__copy-btn {
@@ -86,6 +91,7 @@
           display: block;
           font-size: 2rem;
           color: #fff;
+          font-style: italic;
         }
 
         &__checkbox {

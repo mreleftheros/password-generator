@@ -50,7 +50,11 @@ body {
   line-height: 3rem;
   padding: 0 0.5rem;
   text-align: center;
-  cursor: pointer;
+}
+.main__container__output-container__copy-btn.active {
+  cursor: auto;
+  color: crimson;
+  text-shadow: none;
 }
 .main__container__output-container__copy-btn {
   flex-basis: 5rem;
@@ -93,6 +97,7 @@ body {
   display: block;
   font-size: 2rem;
   color: #fff;
+  font-style: italic;
 }
 .main__container__password-form__form-control__checkbox {
   position: relative;
