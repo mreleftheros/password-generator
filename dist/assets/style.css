@@ -41,14 +41,13 @@ body {
 .main__container__output-container__output {
   flex: 1;
   display: block;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   resize: none;
   appearance: none;
   border: none;
   outline: none;
   height: 3rem;
   line-height: 3rem;
-  padding: 0 0.5rem;
   text-align: center;
 }
 .main__container__output-container__copy-btn.active {
