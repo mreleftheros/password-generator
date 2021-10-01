@@ -26,6 +26,24 @@ const init = () => {
     return updateCopyBtn();
   };
 
+  // helper function that returns random index of a string
+  const getRandomValue = str => {
+    return Math.floor(Math.random() * str.length);
+  };
+
+  const generatePassword = (len, fields) => {
+    let checkedSum = fields.reduce((acc, curr) => curr ? acc + 1 : acc, 0);
+    const [upper, lower, numbers, symboles] = fields;
+
+    switch (checkedSum) {
+      case 0:
+        return;
+        break;
+      case 1:
+
+    }
+  };
+
   // submits password form and calls generatePassword with given value fields
   const submitPasswordForm = e => {
     e.preventDefault();
@@ -36,9 +54,11 @@ const init = () => {
     let numbers = e.target.numbers.checked;
     let symbols = e.target.symbols.checked;
 
+    let fields = [upper, lower, numbers, symbols];
+
     e.target.reset();
 
-    return generatePassword(30, upper, lower, numbers, symbols);
+    return generatePassword(passwordLength, fields);
   };
   
   // event listeners
