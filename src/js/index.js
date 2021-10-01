@@ -32,11 +32,11 @@ const init = () => {
   };
 
   const generatePassword = (len, fields) => {
-    let checkedSum = fields.reduce((acc, curr) => curr ? acc + 1 : acc, 0);
-    const [upper, lower, numbers, symboles] = fields;
+    let password = "";
+    let checkedSum = fields.reduce((acc, curr) => curr.value ? acc + 1 : acc, 0);
 
     switch (checkedSum) {
-      case 0:
+      case 0: // check
         return;
         break;
       case 1:
@@ -54,7 +54,12 @@ const init = () => {
     let numbers = e.target.numbers.checked;
     let symbols = e.target.symbols.checked;
 
-    let fields = [upper, lower, numbers, symbols];
+    let fields = [
+      {name: "upper", value: upper},
+      {name: "lower", value: lower},
+      {name: "numbers", value: numbers},
+      {name: "symbols", value: symbols}
+    ];
 
     e.target.reset();
 
