@@ -93,6 +93,15 @@
           font-style: italic;
         }
 
+        &__range {
+          appearance: none;
+          border: none;
+          width: 5rem;
+          padding: .5rem;
+          border-radius: 1.5rem;
+          font-size: 1.5rem;
+        }
+
         &__checkbox {
           position: relative;
           appearance: none;
