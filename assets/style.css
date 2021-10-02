@@ -98,6 +98,14 @@ body {
   color: #fff;
   font-style: italic;
 }
+.main__container__password-form__form-control__range {
+  appearance: none;
+  border: none;
+  width: 5rem;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
+}
 .main__container__password-form__form-control__checkbox {
   position: relative;
   appearance: none;
