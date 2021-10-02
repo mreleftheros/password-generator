@@ -5,6 +5,8 @@ const init = () => {
   const passwordForm = document.getElementById("passwordForm");
   const textarea = copyBtn.previousElementSibling;
   textarea.value = "";
+  const lengthInput = document.getElementById("length");
+  lengthInput.value = 6;
   const params = [
     {name: "upper", value: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
     {name: "lower", value: "abcdefghijklmnopqrstuvwxyz"},
@@ -163,7 +165,7 @@ const init = () => {
       updateCopyBtn(e);
     }
 
-    let passwordLength = 30;
+    let passwordLength = e.target.length.value;
     let fields = [
       {name: "upper", value: e.target.upperCaseLetters.checked},
       {name: "lower", value: e.target.lowerCaseLetters.checked},
