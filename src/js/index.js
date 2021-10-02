@@ -179,10 +179,23 @@ const init = () => {
 
     return generatePassword(passwordLength, fields);
   };
+
+  // checks if length input value pass the limits and update it
+  const restoreLength = e => {
+    if (e.target.value > 30) {
+      e.target.value = 30;
+    }
+    if (e.target.value < 6) {
+      e.target.value = 6;
+    }
+
+    return;
+  };
   
   // event listeners
   copyBtn.addEventListener("click", copyPassword);
   passwordForm.addEventListener("submit", submitPasswordForm);
+  lengthInput.addEventListener("input", restoreLength);
 };
 
 document.addEventListener("DOMContentLoaded", init);
